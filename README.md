@@ -146,6 +146,20 @@ npx prisma migrate dev
 npm run dev
 ```
 
+## Running the Project
+
+After starting the server:
+
+Server runs at:
+http://localhost:5000
+
+Test API:
+GET http://localhost:5000/
+
+Expected response:
+Backend is running
+
+
 ---
 
 ## Environment Variables
@@ -190,6 +204,25 @@ PORT=5000
 This repository includes API documentation through clearly defined endpoints and sample request formats.
 
 All APIs can be tested locally using Postman or any API client by following the examples below.
+
+---
+
+## API Testing (Postman Collection)
+
+A ready-to-use Postman collection is included in this repository for quick API testing.
+
+File:
+finance-backend.postman_collection.json
+
+Steps to use:
+
+1. Open Postman
+2. Click Import
+3. Select the above JSON file
+4. Run the APIs directly
+
+Note:
+Generate a token using the Login API and use it for protected routes.
 
 ---
 
@@ -301,7 +334,8 @@ Email: [vishnukodidala78@gmail.com](mailto:vishnukodidala78@gmail.com)
 
 ## Declaration
 
-This project was developed independently as part of a backend engineering assignment.
+This project was developed as part of a backend engineering assessment for a Backend Developer Internship role.
+
 External resources were used for learning purposes, but the implementation and design decisions were made independently.
 
 --- Thank You ---
