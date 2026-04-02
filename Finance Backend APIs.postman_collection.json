@@ -1,0 +1,300 @@
+{
+  "info": {
+    "_postman_id": "4a6f479b-673f-4baf-83fa-4978c8b7b91f",
+    "name": "Finance Backend APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53697060",
+    "_collection_link": "https://go.postman.co/collection/53697060-4a6f479b-673f-4baf-83fa-4978c8b7b91f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin123@test.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"ADMIN\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin@test.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Record",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlYzk1NDljLTJlYTctNDA0Yi04ZjExLTNlMTU3YTQyMmJhMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NTEyMTI3NX0.r8fhHy0kNVsM2CPmHgy_-zsx9nB7XwW35ylW4kkjkE4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 5000,\r\n  \"type\": \"INCOME\",\r\n  \"category\": \"Salary\",\r\n  \"date\": \"2024-04-01\",\r\n  \"notes\": \"Monthly salary\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/records",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Records",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Update Record",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlYzk1NDljLTJlYTctNDA0Yi04ZjExLTNlMTU3YTQyMmJhMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NTEyMTI3NX0.r8fhHy0kNVsM2CPmHgy_-zsx9nB7XwW35ylW4kkjkE4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlYzk1NDljLTJlYTctNDA0Yi04ZjExLTNlMTU3YTQyMmJhMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NTEyMTI3NX0.r8fhHy0kNVsM2CPmHgy_-zsx9nB7XwW35ylW4kkjkE4",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 6000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/records/d98115f2-7bea-4b1f-841d-60a3818033f3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records",
+            "d98115f2-7bea-4b1f-841d-60a3818033f3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Record",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlYzk1NDljLTJlYTctNDA0Yi04ZjExLTNlMTU3YTQyMmJhMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NTEyMTI3NX0.r8fhHy0kNVsM2CPmHgy_-zsx9nB7XwW35ylW4kkjkE4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 5000,\r\n  \"type\": \"INCOME\",\r\n  \"category\": \"Salary\",\r\n  \"date\": \"2024-04-01\",\r\n  \"notes\": \"Monthly salary\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/records/d98115f2-7bea-4b1f-841d-60a3818033f3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records",
+            "d98115f2-7bea-4b1f-841d-60a3818033f3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Restore Record",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlYzk1NDljLTJlYTctNDA0Yi04ZjExLTNlMTU3YTQyMmJhMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NTEyMTI3NX0.r8fhHy0kNVsM2CPmHgy_-zsx9nB7XwW35ylW4kkjkE4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 5000,\r\n  \"type\": \"INCOME\",\r\n  \"category\": \"Salary\",\r\n  \"date\": \"2024-04-01\",\r\n  \"notes\": \"Monthly salary\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/records/restore/d98115f2-7bea-4b1f-841d-60a3818033f3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records",
+            "restore",
+            "d98115f2-7bea-4b1f-841d-60a3818033f3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dashboard Summary",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlYzk1NDljLTJlYTctNDA0Yi04ZjExLTNlMTU3YTQyMmJhMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NTEyMTI3NX0.r8fhHy0kNVsM2CPmHgy_-zsx9nB7XwW35ylW4kkjkE4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 5000,\r\n  \"type\": \"INCOME\",\r\n  \"category\": \"Salary\",\r\n  \"date\": \"2024-04-01\",\r\n  \"notes\": \"Monthly salary\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/dashboard/summary",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "dashboard",
+            "summary"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlMjc4MTAyLTZlMDUtNGI2MS1iZDIwLTk4NTc4Yjk4YmIyYyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3NTEyMjc4Mn0.fxUucwiyC9dI7mILEqXezB-lBxyXBEA8lr7o6PxcfPo",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
